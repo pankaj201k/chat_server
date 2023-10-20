@@ -68,7 +68,6 @@ io.on('connection', (socket) => {
     socket.on('send_message', (data) => {
         const { message, username, room, __createdtime__ } = data;
         io.in(room).emit('receive_messages', data);
-        console.log(data);
 
     });
 
@@ -88,7 +87,7 @@ io.on('connection', (socket) => {
 
 
 app.get('/', (req, res) => {
-    res.send('Hello world');
+    res.send('Chat Application');
 });
 
 server.listen(4000, () => console.log('Server is running on port 4000'));
